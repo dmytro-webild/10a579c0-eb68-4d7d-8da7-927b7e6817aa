@@ -4,13 +4,14 @@ import { ThemeProvider } from "@/providers/themeProvider/ThemeProvider";
 import ReactLenis from "lenis/react";
 import FaqSplitMedia from '@/components/sections/faq/FaqSplitMedia';
 import FeatureHoverPattern from '@/components/sections/feature/featureHoverPattern/FeatureHoverPattern';
-import FooterSimple from '@/components/sections/footer/FooterSimple';
+import FooterBaseCard from '@/components/sections/footer/FooterBaseCard';
 import HeroBillboardScroll from '@/components/sections/hero/HeroBillboardScroll';
 import MetricCardFourteen from '@/components/sections/metrics/MetricCardFourteen';
 import NavbarLayoutFloatingInline from '@/components/navbar/NavbarLayoutFloatingInline';
 import ProductCardTwo from '@/components/sections/product/ProductCardTwo';
-import TestimonialCardTwo from '@/components/sections/testimonial/TestimonialCardTwo';
+import TestimonialCardTen from '@/components/sections/testimonial/TestimonialCardTen';
 import TextSplitAbout from '@/components/sections/about/TextSplitAbout';
+import ContactText from '@/components/sections/contact/ContactText';
 import { Music, Sparkles, Utensils } from "lucide-react";
 
 export default function LandingPage() {
@@ -110,59 +111,36 @@ export default function LandingPage() {
   </div>
 
   <div id="testimonials" data-section="testimonials">
-      <TestimonialCardTwo
-      animationType="slide-up"
+      <TestimonialCardTen
       textboxLayout="split"
       useInvertedBackground={true}
-      testimonials={[
-        { id: "1", name: "Sarah Jenkins", role: "Traveler", testimonial: "An incredible window into a magnificent heritage. The artisans were so welcoming.", imageSrc: "http://img.b2bpic.net/free-photo/stylish-woman-wearing-yellow-bandana_273609-13337.jpg" },
-        { id: "2", name: "Michael Chen", role: "Visitor", testimonial: "The culinary experience was the highlight of our trip. Truly authentic flavours.", imageSrc: "http://img.b2bpic.net/free-photo/two-teenage-girls-taking-selfie-after-shopping-spree-while-holding-bags_23-2149053482.jpg" },
-        { id: "3", name: "Amara Diallo", role: "Scholar", testimonial: "A profoundly respectful preservation of Zulu history. Simply remarkable.", imageSrc: "http://img.b2bpic.net/free-photo/young-redhead-female-tourist-rests-her-trip-opens-thermos-drinks-hot-tea-having-break_1258-152038.jpg" },
-        { id: "4", name: "David Miller", role: "Tourist", testimonial: "I learned more in three hours than in weeks of research. A must-visit.", imageSrc: "http://img.b2bpic.net/free-photo/carefree-mixed-race-male-sketaboarder-holds-skateboard-smiles-happily_273609-8747.jpg" },
-        { id: "5", name: "Elena Rossi", role: "Visitor", testimonial: "Vibrant, educational, and deeply moving. We will be back next year.", imageSrc: "http://img.b2bpic.net/free-photo/bright-sunny-day-group-friends-are-enjoying-their-walk-autumn-forest_613910-17467.jpg" },
-      ]}
-      title="Stories from Shaka's Kraal"
+      title="Community Voices"
       description="Discover what our visitors say about their unforgettable cultural journey with us."
+      testimonials={[
+        { id: "1", title: "Remarkable Visit", quote: "An incredible window into a magnificent heritage. The artisans were so welcoming.", name: "Sarah Jenkins", role: "Traveler", imageSrc: "http://img.b2bpic.net/free-photo/stylish-woman-wearing-yellow-bandana_273609-13337.jpg" },
+        { id: "2", title: "Authentic Experience", quote: "The culinary experience was the highlight of our trip. Truly authentic flavours.", name: "Michael Chen", role: "Visitor", imageSrc: "http://img.b2bpic.net/free-photo/two-teenage-girls-taking-selfie-after-shopping-spree-while-holding-bags_23-2149053482.jpg" },
+        { id: "3", title: "Profound History", quote: "A profoundly respectful preservation of Zulu history. Simply remarkable.", name: "Amara Diallo", role: "Scholar", imageSrc: "http://img.b2bpic.net/free-photo/young-redhead-female-tourist-rests-her-trip-opens-thermos-drinks-hot-tea-having-break_1258-152038.jpg" }
+      ]}
     />
   </div>
 
   <div id="contact" data-section="contact">
-      <FaqSplitMedia
-      textboxLayout="split"
-      useInvertedBackground={false}
-      faqs={[
-        { id: "q1", title: "Do I need to book tours in advance?", content: "We highly recommend booking at least 48 hours in advance for our artisan workshops." },
-        { id: "q2", title: "Is the location accessible?", content: "Yes, our kraal facilities are fully wheelchair accessible and family-friendly." },
-        { id: "q3", title: "Are there parking facilities?", content: "Secure on-site parking is available for all visitors free of charge." },
-      ]}
-      imageSrc="http://img.b2bpic.net/free-photo/beautiful-landscape-with-river-bridge-background_1136-210.jpg"
-      mediaAnimation="opacity"
-      title="Plan Your Visit"
-      description="Answers to frequently asked questions to help you prepare for an authentic experience."
-      faqsAnimation="blur-reveal"
+      <ContactText
+      text="Ready to explore the heritage of Shaka's Kraal? Contact us today to secure your visit."
+      buttons={[{ text: "Book Your Tour" }]}
+      background={{ variant: "sparkles-gradient" }}
+      useInvertedBackground={true}
     />
   </div>
 
   <div id="footer" data-section="footer">
-      <FooterSimple
+      <FooterBaseCard
+      logoText="Shaka's Kraal"
       columns={[
-        {
-          title: "Navigate",          items: [
-            { label: "About Us", href: "#about" },
-            { label: "Products", href: "#products" },
-            { label: "FAQ", href: "#contact" },
-          ],
-        },
-        {
-          title: "Connect",          items: [
-            { label: "Instagram", href: "#" },
-            { label: "Facebook", href: "#" },
-            { label: "WhatsApp", href: "#" },
-          ],
-        },
+        { title: "Explore", items: [{ label: "Our Heritage", href: "#about" }, { label: "Artisan Shops", href: "#products" }] },
+        { title: "Support", items: [{ label: "Contact Us", href: "#contact" }, { label: "FAQ", href: "#contact" }] }
       ]}
-      bottomLeftText="© 2024 Shaka's Kraal Cultural Center"
-      bottomRightText="Heritage Preservation Initiative"
+      copyrightText="© 2025 Shaka's Kraal Heritage Preservation"
     />
   </div>
       </ReactLenis>
